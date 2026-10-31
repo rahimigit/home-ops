@@ -1,18 +1,9 @@
 ---
 name: Image Pull Tester
 
-on: # yamllint disable-line rule:truthy
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "cluster/**.yaml"
-      - "ansible/**.yml.j2"
-    types:
-      - labeled
-      - opened
-      - synchronize
-      - reopened
+on:
+  # automatic triggers removed 2026-10-30 to stop burning hosted-runner minutes; run manually
+  workflow_dispatch:
 
 jobs:
   detect-file-changes:
